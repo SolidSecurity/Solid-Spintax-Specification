@@ -40,3 +40,38 @@ An advanced spintax element supported by SolidSpintax is an integer switch.
 ##### Possible Outputs (36 total):
  - "My height is 4'8"."
  - "My height is 6'3"."
+
+## 2. Structure
+### 2.1. Nested Switches
+Nested switches are created by specifying a switch within the body of a string switch. Solid's Spintax supports unlimited nesting depth.
+
+##### Basic Example:
+> A phone that costs {{100-499} is too cheap|{500-899} is just right|{900-1499} is too expensive}.
+##### Possible Outputs (1400 total):
+ - "A phone that costs $393 is too cheap."
+ - "A phone that costs $582 is too just right."
+ - "A phone that costs $1243 is too expensive."
+
+##### Advanced Example:
+> Tailspin is {{an advanced|a {vital|sophisticated}} leak-{mitigation|detection} tool|an open source software library}.
+##### Possible Outputs (7 total):
+ - "Tailspin is an open source software library."
+ - "Tailspin is an advanced leak-detection tool."
+ - "Tailspin is a sophisticated leak-mitigation tool."
+
+### 2.2. Optional Content
+Optional content is specified by adding an empty option to a switch, usually by adding a pipe (|) immediately after the opening brace.
+
+##### Basic Example:
+> This is {|very |so }easy!
+##### Possible Outputs (3 total):
+ - "This is easy!"
+ - "This is very easy!"
+ - "This is so easy!"
+
+##### Advanced Example:
+> Solid{| Security} is a {| certified}{| private} {|cyber}security{| services} {provider|company}.
+##### Possible Outputs (64 total):
+ - "Solid is a security company."
+ - "Solid Security is a certified private cybersecurity services provider."
+ - "Solid is a private security services company."

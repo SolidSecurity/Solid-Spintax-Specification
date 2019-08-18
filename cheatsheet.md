@@ -37,6 +37,6 @@ An advanced spintax element supported by SolidSpintax is an integer switch.
 
 ##### Advanced Example:
 > My height is {4-6}'{0-11}"
-##### Possible Outputs (12 total):
+##### Possible Outputs (36 total):
  - "My height is 4'8"."
  - "My height is 6'3"."

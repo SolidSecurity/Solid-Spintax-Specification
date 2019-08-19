@@ -75,3 +75,25 @@ Optional content is specified by adding an empty option to a switch, usually by 
  - "Solid is a security company."
  - "Solid Security is a certified private cybersecurity services provider."
  - "Solid is a private security services company."
+
+## 3. Advanced Features
+### 3.1. Global Switches
+*A global switch is specified using an at symbol (@) followed by curly braces ({}) with options separated by a vertical bar (|). Two global switches must have an identical set of options in order to guarantee the same output.*
+
+Global switches allow you to specify a set of options that, once selected from, will return the same result for the entire document.
+
+##### Basic Example:
+> Introducing project @{Purple Phoenix|Golden Eagle}. Project @{Purple Phoenix|Golden Eagle} is a new security initiative from Solid Security. Our goal with project @{Purple Phoenix|Golden Eagle} is to...
+##### Possible Outputs (2 total):
+ - "Introducing project Purple Phoenix. Project Purple Phoenix is a new security initiative from Solid Security. Our goal with project Purple Phoenix is to..."
+ - "Introducing project Golden Eagle. Project Golden Eagle is a new security initiative from Solid Security. Our goal with project Golden Eagle is to..."
+
+### 3.2. Escaped Characters
+*A backslash (\\) character can be used before special characters like at symbols (@), curly braces ({}), and vertical bars (|) to prevent them from being interpreted as switches or other special syntactic elements.*
+
+Escaped characters allow you to use characters like curly braces ({}), at symbols (@), and vertical bars (|) as part of the final text rather than having them interpreted as a special instruction.
+
+##### Basic Example:
+> Email: \{hello\@solidsecurity.co\}
+##### Possible Outputs (1 total):
+ - "Email: {hello@solidsecurity.co}"

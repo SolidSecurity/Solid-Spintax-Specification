@@ -41,6 +41,21 @@ An advanced spintax element supported by SolidSpintax is an integer switch.
  - "My height is 4'8"."
  - "My height is 6'3"."
 
+### 1.3 Shuffle Switches
+*A shuffle switch is specified using curly braces ({}) with an exclamation point (!) prefacing the braces.
+
+##### Basic Example:
+> I went to the store. I bought !{apples|cheese|oranges|a gallon of milk} and some bacon.
+##### Possible Outputs (24 Total)
+ - "I went to the store. I bought apples, oranges, a gallon of milk, cheese, and some bacon.
+ - "I went to the store. I bought cheese, a gallon of milk, oranges, apples, and some bacon.
+ 
+##### Advanced Example:
+> We need to order !{{2-4} Bricks|{3-5} slats of hardwood|{strong|industrial strength|good} cement} and some tile.
+##### Possible Outcomes (1944 total):
+ - "We need to order 2 bricks, 4 slats of hardwood, industrial strength cement, and some tile.
+ - "We need to order 3 bricks, 5 slats of hardwood, strong cement, and some tile."
+
 ## 2. Structure
 ### 2.1. Nested Switches
 Nested switches are created by specifying a switch within the body of a string switch. Solid's Spintax supports unlimited nesting depth.
